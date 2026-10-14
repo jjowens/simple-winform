@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="../SimpleWin.Library/SimpleWin.Library.csproj" Id="55765fed-2c78-47a1-89b5-a17da7a0ec61" />
+  <Project Path="../SimpleWinTests/SimpleWinTests.csproj" Id="f3337154-9ee3-4a23-9602-7730ddc867f9" />
   <Project Path="SimpleWin.csproj" Id="5770968d-2f93-4982-bff5-048ec3c7a9e3" />
 </Solution>
