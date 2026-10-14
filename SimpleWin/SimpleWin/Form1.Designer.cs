@@ -128,6 +128,7 @@
             this.btnRemoveVowels.TabIndex = 6;
             this.btnRemoveVowels.Text = "Remove Vowels";
             this.btnRemoveVowels.UseVisualStyleBackColor = true;
+            this.btnRemoveVowels.Click += new System.EventHandler(this.btnRemoveVowels_Click);
             // 
             // btnClearAll
             // 
