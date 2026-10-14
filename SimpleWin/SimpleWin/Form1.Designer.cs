@@ -118,6 +118,7 @@
             this.btnReverseLetters.TabIndex = 4;
             this.btnReverseLetters.Text = "Reverse Letters";
             this.btnReverseLetters.UseVisualStyleBackColor = true;
+            this.btnReverseLetters.Click += new System.EventHandler(this.btnReverseLetters_Click);
             // 
             // btnRemoveVowels
             // 

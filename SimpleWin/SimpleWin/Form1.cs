@@ -47,5 +47,13 @@ namespace SimpleWin
             WordService wordService = new WordService();
             txtOriginal.Text = wordService.LoadText();
         }
+
+        private void btnReverseLetters_Click(object sender, EventArgs e)
+        {
+            WordService wordService = new WordService();
+
+            string output = wordService.ReverseLetters(txtOriginal.Text);
+            txtTransformed.Text = output;
+        }
     }
 }
