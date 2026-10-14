@@ -18,6 +18,40 @@ namespace SimpleWin
             InitializeComponent();
         }
 
+        private enum actions
+        {
+            ReverseLetters,
+            ReverseWords,
+            RemoveVowels
+        }
+
+        private void run_action(actions action)
+        {
+            WordService wordService = new WordService();
+            string output = string.Empty;
+            Boolean flag_default = false;
+
+            switch (action) {
+                case actions.ReverseLetters:
+                    output = wordService.ReverseLetters(txtOriginal.Text);
+                    break;
+                case actions.ReverseWords:
+                    output = wordService.ReverseWords(txtOriginal.Text);
+                    break;
+                case actions.RemoveVowels:
+                    output = wordService.RemoveVowels(txtOriginal.Text);
+                    break;
+                default:
+                    flag_default = true;
+                    break;
+            }
+
+            if (!flag_default)
+            {
+                txtTransformed.Text = output;
+            }
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -25,10 +59,17 @@ namespace SimpleWin
 
         private void btnReverseWords_Click(object sender, EventArgs e)
         {
-            WordService wordService = new WordService();
+           run_action(actions.ReverseWords);
+        }
 
-            string output = wordService.ReverseWords(txtOriginal.Text);
-            txtTransformed.Text = output;
+        private void btnReverseLetters_Click(object sender, EventArgs e)
+        {
+            run_action(actions.ReverseLetters);
+        }
+
+        private void btnRemoveVowels_Click(object sender, EventArgs e)
+        {
+            run_action(actions.RemoveVowels);
         }
 
         private void btnClearOutput_Click(object sender, EventArgs e)
@@ -48,20 +89,6 @@ namespace SimpleWin
             txtOriginal.Text = wordService.LoadText();
         }
 
-        private void btnReverseLetters_Click(object sender, EventArgs e)
-        {
-            WordService wordService = new WordService();
-
-            string output = wordService.ReverseLetters(txtOriginal.Text);
-            txtTransformed.Text = output;
-        }
-
-        private void btnRemoveVowels_Click(object sender, EventArgs e)
-        {
-            WordService wordService = new WordService();
-
-            string output = wordService.RemoveVowels(txtOriginal.Text);
-            txtTransformed.Text = output;
-        }
+        
     }
 }
