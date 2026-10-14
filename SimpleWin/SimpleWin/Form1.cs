@@ -55,5 +55,13 @@ namespace SimpleWin
             string output = wordService.ReverseLetters(txtOriginal.Text);
             txtTransformed.Text = output;
         }
+
+        private void btnRemoveVowels_Click(object sender, EventArgs e)
+        {
+            WordService wordService = new WordService();
+
+            string output = wordService.RemoveVowels(txtOriginal.Text);
+            txtTransformed.Text = output;
+        }
     }
 }

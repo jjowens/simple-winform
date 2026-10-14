@@ -54,5 +54,19 @@ namespace SimpleWin.Library
             return result;
         }
 
+        public string RemoveVowels(string bodyText)
+        {
+            string[] remove_array = new string[] { "a", "e", "i", "o", "u" };
+            string result = bodyText;
+
+            foreach (string letter in remove_array)
+            {
+                result = result.Replace(letter, "");
+                result = result.Replace(letter.ToUpper(), "");
+            }
+
+            return result;
+        }
+
     }
 }

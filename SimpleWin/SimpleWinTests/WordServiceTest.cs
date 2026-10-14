@@ -32,5 +32,41 @@ namespace SimpleWinTests
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void RemoveVowels()
+        {
+            string expected = "Th qck brwn fx jmps vr th lzy dg";
+
+            WordService wordService = new WordService();
+
+            string result = wordService.RemoveVowels(_input);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void RemoveVowels_UpperCase()
+        {
+            string expected = "TH QCK BRWN FX JMPS VR TH LZY DG";
+
+            WordService wordService = new WordService();
+
+            string result = wordService.RemoveVowels(_input.ToUpper());
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void RemoveVowels_lowercase()
+        {
+            string expected = "th qck brwn fx jmps vr th lzy dg";
+
+            WordService wordService = new WordService();
+
+            string result = wordService.RemoveVowels(_input.ToLower());
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }
